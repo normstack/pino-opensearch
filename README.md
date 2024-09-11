@@ -52,7 +52,8 @@ const streamToOpenSearch = pinoOpenSearch({
   consistency: 'one',
   node: 'http://localhost:9200',
   'es-version': 7,
-  'flush-bytes': 1000
+  'flush-bytes': 1000,
+  resurrectAttemptTimeout: 5000,
 })
 
 const logger = pino({ level: 'info' }, streamToOpenSearch)
